@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>六刻巡旅 - 謎解き・アドベンチャー</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <!-- ローディング画面 -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-text">六刻巡旅</div>
+  </div>
+
+  <!-- カスタムカーソル -->
+  <div class="custom-cursor" id="cursor"></div>
+
+  <!-- パーティクル背景 -->
+  <div class="particles" id="particles"></div>
+
+  <!-- ヘッダー -->
+  <header class="site-header" id="header">
+  </header>
+
+  <!-- ストーリーセクション -->
+  <section class="story-section" id="story">
+    <div class="story-content">
+      <h2 class="section-title story-title-large">注意</h2>
+      <div class="story-text story-text-large scroll-reveal">
+        この六つの刻を巡る旅は、<p class="story-paragraph"><span class="story-highlight">限られた時間</span>でしか遊ぶことができないゲームです。</p>
+        <p class="story-paragraph"><span class="story-highlight horror-text">２２時００分～３時００分</span></p>
+        <p class="story-paragraph">時間が過ぎれば、すべてが消えてしまう。<br>
+        <p class="story-paragraph">この儚い世界を、あなたはどう生き抜きますか？
+        <p class="story-paragraph">さあ、扉が開かれるその瞬間を、<span class="story-highlight">見逃さないでください。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ゲーム機能セクション -->
+  <section class="features-section">
+    <div class="features-container">
+      <h2 class="section-title">ゲーム特徴</h2>
+      <div class="features-grid">
+        <div class="feature-card scroll-reveal">
+          <div class="feature-icon">🔍</div>
+          <div class="feature-title">謎解き要素</div>
+          <div class="feature-desc">複雑に絡み合った謎を解いて、真実に迫れ。隠された手がかりを見つけ出そう。</div>
+        </div>
+        <div class="feature-card scroll-reveal">
+          <div class="feature-icon"><img src="image/time.png" height="50px" width="50px"></div>
+          <div class="feature-title">時間の概念</div>
+          <div class="feature-desc">六刻が示す意味とは？限られた時間に隠された秘密を解き明かせ。</div>
+        </div>
+        <div class="feature-card scroll-reveal">
+          <div class="feature-icon"><img src="image/light.png"></div>
+          <div class="feature-title">心理的恐怖</div>
+          <div class="feature-desc">じわじわと迫る恐怖感。予測不可能な展開があなたを待ち受ける。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- コミュニティセクション -->
+<section class="community-section">
+  <div class="community-container">
+    <h2 class="section-title">コミュニティ</h2>
+    <div class="status-text">永久開放</div>
+    <div class="community-content">
+      <p class="community-description">
+        他のプレイヤーと情報を共有し、謎を解き明かそう。<br>
+        攻略のヒントや体験談を語り合える場所へようこそ。<br>
+        ※ネタバレ禁止
+      </p>
+      <a href="users2.kyoto-kcg.ac.jp/public_html/2025C34/community/index.php" class="community-button">
+        <span class="button-icon">💬</span>
+        <span class="button-text">コミュニティに参加する</span>
+      </a>
+    </div>
+  </div>
+</section>
+  <section class="torii-section" id="torii">
+    <h2 class="section-title">六つの刻を巡る旅</h2>
+    <div class="time-text">どれからプレイしても構いません。</div>
+    <div class="torii-grid">
+      <a href="Ikoku/Ikoku.html" class="torii-card" style="text-decoration: none; color: inherit;">
+        <div class="torii-number">一</div>
+        <div class="torii-name">一刻</div>
+        <div class="torii-status">部屋の間</div>
+      </a>
+      <div class="torii-card locked">
+        <div class="torii-number">二</div>
+        <div class="torii-name">二刻</div>
+        <div class="torii-status">雪の間</div>
+      </div>
+      <div class="torii-card">
+        <div class="torii-number">三</div>
+        <div class="torii-name">三刻</div>
+        <div class="torii-status"></div>
+      </div>
+      <div class="torii-card">
+        <div class="torii-number">四</div>
+        <div class="torii-name">四刻</div>
+        <div class="torii-status"></div>
+      </div>
+      <div class="torii-card">
+        <div class="torii-number">五</div>
+        <div class="torii-name">五刻</div>
+        <div class="torii-status"></div>
+      </div>
+      <div class="torii-card">
+        <div class="torii-number">六</div>
+        <div class="torii-name">六刻</div>
+        <div class="torii-status"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 謎解きセクション -->
+  <section class="mystery-section" id="mystery">
+    <div class="mystery-container">
+      <h2 class="section-title">終</h2>
+      <div class="mystery-box">
+        <div class="mystery-question">
+          六刻の正体とは...？
+        </div>
+        <input type="text" class="mystery-input" id="mysteryAnswer" placeholder="答えを入力...">
+        <br>
+        <button class="mystery-button" onclick="checkAnswer()">確認</button>
+        <div id="mysteryResult" style="margin-top: 20px; color: #ff6b6b; font-weight: bold;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- モーダル -->
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle" style="color: #ff6b6b; margin-bottom: 20px;">刻の情報</h3>
+      <p id="modalContent" style="line-height: 1.6;">ここに各刻の詳細情報が表示されます。</p>
+      <button id="prevChapterButton" class="chapter-button" onclick="showPreviousChapter()">前の章</button>
+      <button id="nextChapterButton" class="next-button" onclick="showNextChapter()">次の章</button>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#privacy">プライバシーポリシー</a>
+        <a href="#terms">利用規約</a>
+        <a href="#support">サポート</a>
+        <a href="#otoiawase">お問い合わせ</a>
+      </div>
+      <div class="copyright">
+        &copy; 2025 六刻の鳥居 - All rights reserved
+      </div>
+    </div>
+  </footer>
+  <script src="game.js"></script>
+</body>
+</html>
